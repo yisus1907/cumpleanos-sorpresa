@@ -1,0 +1,327 @@
+<section class="contador">
+
+  <p class="pequeno">
+    ❤️ Falta poco para tu día especial ❤️
+  </p>
+
+
+  <h2>
+    Tus 15 años
+  </h2>
+
+
+  <div class="tiempo">
+
+    <div>
+      <span id="dias">00</span>
+      <p>Días</p>
+    </div>
+
+
+    <div>
+      <span id="horas">00</span>
+      <p>Horas</p>
+    </div>
+
+
+    <div>
+      <span id="minutos">00</span>
+      <p>Minutos</p>
+    </div>
+
+
+    <div>
+      <span id="segundos">00</span>
+      <p>Segundos</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+
+const fechaCumple =
+new Date("November 5, 2026 00:00:00").getTime();
+
+
+
+setInterval(()=>{
+
+
+const ahora =
+new Date().getTime();
+
+
+const diferencia =
+fechaCumple - ahora;
+
+
+
+const dias =
+Math.floor(
+diferencia /
+(1000 * 60 * 60 * 24)
+);
+
+
+
+const horas =
+Math.floor(
+(diferencia %
+(1000*60*60*24)) /
+(1000*60*60)
+);
+
+
+
+const minutos =
+Math.floor(
+(diferencia %
+(1000*60*60)) /
+(1000*60)
+);
+
+
+
+const segundos =
+Math.floor(
+(diferencia %
+(1000*60)) /
+1000
+);
+
+
+
+document.getElementById("dias")!.textContent =
+String(dias).padStart(2,"0");
+
+
+document.getElementById("horas")!.textContent =
+String(horas).padStart(2,"0");
+
+
+document.getElementById("minutos")!.textContent =
+String(minutos).padStart(2,"0");
+
+
+document.getElementById("segundos")!.textContent =
+String(segundos).padStart(2,"0");
+
+
+},1000);
+
+
+</script>
+
+
+
+<style>
+
+.contador{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+radial-gradient(
+circle at top,
+#312e81,
+#020617 75%
+);
+
+color:white;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+/* estrellas suaves */
+
+.contador::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+radial-gradient(white 1px, transparent 1px);
+
+background-size:45px 45px;
+
+opacity:.25;
+
+animation:movimiento 20s linear infinite;
+
+}
+
+
+
+@keyframes movimiento{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(40px);
+
+}
+
+}
+
+
+
+.pequeno{
+
+position:relative;
+
+color:#fbcfe8;
+
+font-size:20px;
+
+}
+
+
+
+h2{
+
+position:relative;
+
+font-family:"Great Vibes",cursive;
+
+font-size:75px;
+
+color:#f9a8d4;
+
+margin:20px;
+
+text-shadow:
+
+0 0 10px #ec4899,
+
+0 0 30px #f472b6;
+
+}
+
+
+
+.tiempo{
+
+position:relative;
+
+display:flex;
+
+gap:25px;
+
+}
+
+
+
+.tiempo div{
+
+background:
+
+rgba(255,255,255,.12);
+
+padding:25px;
+
+min-width:110px;
+
+border-radius:25px;
+
+backdrop-filter:blur(12px);
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+box-shadow:
+
+0 0 30px rgba(236,72,153,.35);
+
+transition:.3s;
+
+}
+
+
+
+.tiempo div:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.tiempo span{
+
+font-size:50px;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:
+
+0 0 15px #f472b6;
+
+}
+
+
+
+.tiempo p{
+
+margin-top:10px;
+
+color:#fce7f3;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.tiempo{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+
+h2{
+
+font-size:55px;
+
+}
+
+
+
+}
+
+
+
+</style>

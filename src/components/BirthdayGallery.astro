@@ -1,0 +1,179 @@
+<section id="galeria" class="galeria-cumple">
+
+  <h2>
+    Nuestros recuerdos ❤️
+  </h2>
+
+
+  <div class="fotos">
+
+
+    <img src="/fotos/foto01.jpg" alt="Recuerdo 1">
+
+
+    <img src="/fotos/foto02.jpg" alt="Recuerdo 2">
+
+
+    <img src="/fotos/foto03.jpg" alt="Recuerdo 3">
+
+
+    <img src="/fotos/foto4.jpg" alt="Recuerdo 4">
+
+
+    <img src="/fotos/foto5.jpg" alt="Recuerdo 5">
+
+
+    <img src="/fotos/foto6.jpg" alt="Recuerdo 6">
+
+
+  </div>
+
+
+</section>
+
+
+
+<style>
+    .oculto{
+
+display:none;
+
+}
+
+
+.mostrar{
+
+display:block;
+
+animation:aparecer 1.5s ease;
+
+}
+
+
+.galeria-cumple{
+
+padding:80px 20px;
+
+text-align:center;
+
+background:
+
+radial-gradient(
+circle at top,
+#312e81,
+#020617
+);
+
+}
+
+
+
+h2{
+
+font-family:"Great Vibes",cursive;
+
+font-size:70px;
+
+color:#f9a8d4;
+
+text-shadow:
+
+0 0 15px #ec4899;
+
+margin-bottom:50px;
+
+}
+
+
+
+.fotos{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+
+
+.fotos img{
+
+width:100%;
+
+height:280px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+
+box-shadow:
+
+0 0 25px rgba(236,72,153,.5);
+
+
+transition:.5s;
+
+
+animation:aparecer 1s ease;
+
+}
+
+
+
+.fotos img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+@keyframes aparecer{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+.escondida{
+
+display:none;
+
+}
+
+
+.visible{
+
+display:block;
+
+animation:aparecer 1.5s ease;
+
+}
+
+
+
+</style>

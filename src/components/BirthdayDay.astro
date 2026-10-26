@@ -1,0 +1,410 @@
+---
+import BirthdayMusic from "./BirthdayMusic.astro";
+import BirthdayGallery from "./BirthdayGallery.astro";
+import FinalLetter from "./FinalLetter.astro";
+---
+<section class="cumple">
+
+  <div class="contenido-cumple">
+
+
+    <p class="pequeno">
+      🎉 Hoy es un día muy especial 🎉
+    </p>
+
+
+    <h1>
+      Feliz cumpleaños Dannita ❤️
+    </h1>
+
+
+    <h2>
+      15 años ✨
+    </h2>
+
+
+    <p class="mensaje-cumple">
+
+      Después de esperar este momento,
+      llegó el día de abrir esta pequeña sorpresa
+      preparada especialmente para ti.
+
+    </p>
+    <button id="regalo">
+
+💝 Abrir mi regalo
+
+</button>
+    <BirthdayMusic />
+<div id="galeriaOculta" style="display:none;">
+
+  <BirthdayGallery />
+
+</div>
+
+
+ <div id="cartaOculta" style="display:none;">
+
+  <FinalLetter />
+
+</div>
+
+
+<button id="continuar" style="display:none;">
+
+💌 Leer mi carta
+
+</button>
+
+
+
+    <button id="regalo">
+
+      💝 Volver a ver mi regalo
+
+    </button>
+<script>
+
+const boton =
+document.getElementById("regalo");
+
+
+const galeria =
+document.getElementById("galeriaOculta");
+
+
+const continuar =
+document.getElementById("continuar");
+
+
+const carta =
+document.getElementById("cartaOculta");
+
+
+
+boton?.addEventListener("click",()=>{
+  // Corazones
+
+for(let i=0;i<30;i++){
+
+const corazon =
+document.createElement("div");
+
+corazon.className="corazon";
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+corazon.style.bottom="-20px";
+
+corazon.style.animationDelay=(Math.random()*0.8)+"s";
+
+corazon.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},3000);
+
+}
+
+
+// música
+
+if(window.iniciarCancion){
+
+window.iniciarCancion();
+
+}
+
+
+// mostrar fotos
+
+if(galeria){
+
+galeria.style.display="block";
+
+
+galeria.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+// mostrar botón continuar
+
+if(continuar){
+
+continuar.style.display="block";
+
+}
+
+
+});
+
+
+
+
+continuar?.addEventListener("click",()=>{
+
+
+if(carta){
+
+carta.style.display="block";
+
+
+carta.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+});
+
+
+
+</script>
+  </div>
+
+
+</section>
+
+
+
+<style>
+
+
+.cumple{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+background:
+
+radial-gradient(
+circle at top,
+#312e81,
+#020617 75%
+);
+
+color:white;
+
+padding:40px;
+
+}
+
+
+
+.contenido-cumple{
+
+max-width:700px;
+
+}
+
+
+
+.pequeno{
+
+color:#fbcfe8;
+
+font-size:22px;
+
+}
+
+
+
+h1{
+
+font-family:"Great Vibes",cursive;
+
+font-size:80px;
+
+color:#f9a8d4;
+
+text-shadow:
+
+0 0 10px #ec4899,
+
+0 0 30px #f472b6;
+
+}
+
+
+
+h2{
+
+font-size:50px;
+
+color:#fde68a;
+
+}
+
+
+
+.mensaje-cumple{
+
+font-size:20px;
+
+line-height:1.8;
+
+margin-top:30px;
+
+}
+
+
+
+button{
+
+margin-top:40px;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+border:none;
+
+background:
+
+linear-gradient(
+45deg,
+#ec4899,
+#a855f7
+);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+box-shadow:
+
+0 0 25px #ec4899;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+<script>
+
+const boton = document.getElementById("regalo");
+
+const galeria = document.getElementById("galeriaOculta");
+
+
+boton?.addEventListener("click",()=>{
+
+
+if(galeria){
+
+galeria.style.display = "block";
+
+}
+
+
+if(window.iniciarCancion){
+
+window.iniciarCancion();
+
+}
+
+
+});
+
+</script>
+#regalo{
+
+margin-top:40px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+linear-gradient(
+45deg,
+#ec4899,
+#a855f7
+);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+box-shadow:
+0 0 25px #ec4899;
+
+transition:.3s;
+
+}
+
+
+#regalo:hover{
+
+transform:scale(1.1);
+
+}
+.corazon{
+
+position:fixed;
+
+font-size:30px;
+
+pointer-events:none;
+
+z-index:9999;
+
+animation:subir 3s linear forwards;
+
+}
+
+@keyframes subir{
+
+0%{
+
+transform:translateY(0) scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-700px) scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+
+</style>

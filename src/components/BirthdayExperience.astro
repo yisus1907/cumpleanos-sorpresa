@@ -1,0 +1,67 @@
+<div id="espera">
+
+  <slot name="espera"></slot>
+
+</div>
+
+
+<div id="cumple">
+
+  <slot name="cumple"></slot>
+
+</div>
+
+
+
+<script>
+
+const fechaCumple =
+new Date("November 5, 2026 00:00:00");
+
+
+const ahora =
+new Date();
+
+
+
+const espera =
+document.getElementById("espera");
+
+
+const cumple =
+document.getElementById("cumple");
+
+
+
+if(ahora >= fechaCumple){
+
+
+  espera.style.display = "none";
+
+  cumple.style.display = "block";
+
+
+}else{
+
+
+  espera.style.display = "block";
+
+  cumple.style.display = "none";
+
+
+}
+
+
+</script>
+
+
+
+<style>
+
+#cumple{
+
+display:none;
+
+}
+
+</style>

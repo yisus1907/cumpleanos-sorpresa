@@ -1,11 +1,265 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import MusicPlayer from "../components/MusicPlayer.astro";
+import Letter from "../components/Letter.astro";
+import Countdown from "../components/Countdown.astro";
+import BirthdayButton from "../components/BirthdayButton.astro";
+import BirthdayExperience from "../components/BirthdayExperience.astro";
+import BirthdayDay from "../components/BirthdayDay.astro";
 ---
 
+
 <Layout>
-	<Welcome />
+
+
+<BirthdayExperience>
+
+
+<div slot="espera">
+
+
+  <MusicPlayer />
+
+
+  <main class="hero">
+
+
+    <div class="estrellas"></div>
+
+    <div class="luna"></div>
+
+
+    <div class="contenido">
+
+
+      <p class="subtitulo">
+        ✨ Una pequeña sorpresa ✨
+      </p>
+
+
+      <h1>
+        Dannita ❤️
+      </h1>
+
+
+      <p class="mensaje">
+        He preparado algo muy especial para ti...
+      </p>
+
+
+      <BirthdayButton />
+
+
+    </div>
+
+
+  </main>
+
+
+  <Letter />
+
+
+  <Countdown />
+
+
+</div>
+
+
+
+<div slot="cumple">
+
+
+  <BirthdayDay />
+
+
+</div>
+
+
+
+</BirthdayExperience>
+
+
+<style>
+
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  overflow:hidden;
+
+  position:relative;
+
+  background:
+  radial-gradient(circle at top,#312e81,#020617 70%);
+
+}
+
+
+
+.estrellas{
+
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+  radial-gradient(white 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  opacity:.5;
+
+  animation:mover 20s linear infinite;
+
+}
+
+
+
+@keyframes mover{
+
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(40px);
+
+}
+
+
+}
+
+
+
+.luna{
+
+
+position:absolute;
+
+top:80px;
+
+right:15%;
+
+width:120px;
+
+height:120px;
+
+background:#fff7ed;
+
+border-radius:50%;
+
+
+box-shadow:
+
+0 0 40px #fde68a,
+
+0 0 80px #fef3c7;
+
+
+}
+
+
+
+
+.contenido{
+
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+
+}
+
+
+
+.subtitulo{
+
+
+color:#fbcfe8;
+
+font-size:1.2rem;
+
+
+}
+
+
+
+
+h1{
+
+
+font-family:"Great Vibes",cursive;
+
+font-size:90px;
+
+color:#fbcfe8;
+
+
+text-shadow:
+
+0 0 10px #f9a8d4,
+
+0 0 30px #ec4899;
+
+
+animation:brillo 2s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes brillo{
+
+
+from{
+
+filter:brightness(1);
+
+}
+
+
+to{
+
+filter:brightness(1.5);
+
+}
+
+
+}
+
+
+
+
+.mensaje{
+
+
+margin-top:20px;
+
+color:white;
+
+font-size:1.2rem;
+
+
+}
+
+
+
+</style>
 </Layout>

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --rosa: #f9a8d4;
+  --rosa-claro: #fce7f3;
+  --lavanda: #ddd6fe;
+  --morado: #8b5cf6;
+  --noche: #0f172a;
+  --dorado: #fbbf24;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--noche);
+  color: white;
+  overflow-x: hidden;
+}
+
+.titulo-romantico {
+  font-family: "Great Vibes", cursive;
+}
+
+.texto-elegante {
+  font-family: "Playfair Display", serif;
+}

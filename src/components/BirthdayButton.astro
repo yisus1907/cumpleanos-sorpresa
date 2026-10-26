@@ -1,0 +1,76 @@
+<button id="abrir" class="boton-sorpresa">
+  🎁 Abrir sorpresa
+</button>
+
+
+<script>
+
+const boton = document.getElementById("abrir");
+
+
+boton?.addEventListener("click",()=>{
+
+const carta = document.getElementById("carta");
+
+
+if(carta){
+
+  carta.classList.remove("oculta");
+
+  carta.classList.add("mostrar");
+
+
+  carta.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+});
+
+</script>
+
+
+<style>
+
+.boton-sorpresa{
+
+  margin-top:40px;
+
+  padding:15px 35px;
+
+  border-radius:50px;
+
+  border:none;
+
+  background:
+  linear-gradient(
+  45deg,
+  #ec4899,
+  #a855f7
+  );
+
+  color:white;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 0 20px #ec4899;
+
+  transition:.3s;
+
+}
+
+
+.boton-sorpresa:hover{
+
+  transform:scale(1.1);
+
+  box-shadow:
+  0 0 35px #ec4899;
+
+}
+
+</style>
