@@ -16,32 +16,25 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
+   steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
 
-      - name: Checkout
-        uses: actions/checkout@v4
+  - name: Set up Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 24
 
+  - name: Install dependencies
+    run: npm install
 
-      - name: Setup Node
-  uses: actions/setup-node@v4
-  with:
-    node-version: 24
-
-
-      - name: Install dependencies
-        run: npm install
-
-
-      - name: Build Astro
-        run: npm run build
-
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-
+  - name: Build project
+    run: npm run build
+    
+  - name: Upload artifact
+    uses: actions/upload-pages-artifact@v3
+    with:
+      path: ./dist
 
   deploy:
 
