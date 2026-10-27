@@ -11,76 +11,71 @@ import BirthdayDay from "../components/BirthdayDay.astro";
 
 <Layout>
 
-
 <BirthdayExperience>
 
+  <div slot="espera">
 
-<div slot="espera">
-
-
-  <MusicPlayer />
+    <MusicPlayer />
 
 
-  <main class="hero">
+    <main class="hero">
+
+      <div class="estrellas"></div>
+
+      <div class="luna"></div>
 
 
-    <div class="estrellas"></div>
-
-    <div class="luna"></div>
+      <div class="contenido">
 
 
-    <div class="contenido">
+        <p class="subtitulo">
+          ✨ Una pequeña sorpresa ✨
+        </p>
 
 
-      <p class="subtitulo">
-        ✨ Una pequeña sorpresa ✨
-      </p>
+        <h1>
+          Dannita ❤️
+        </h1>
 
 
-      <h1>
-        Dannita ❤️
-      </h1>
+        <p class="mensaje">
+          He preparado algo muy especial para ti...
+        </p>
 
 
-      <p class="mensaje">
-        He preparado algo muy especial para ti...
-      </p>
+        <BirthdayButton />
 
 
-      <BirthdayButton />
+      </div>
 
 
-    </div>
+    </main>
 
 
-  </main>
+    <Countdown />
 
 
-  <Letter />
+    <!-- Carta corta antes del cumpleaños -->
+    <Letter />
 
 
-  <Countdown />
-
-
-</div>
+  </div>
 
 
 
-<div slot="cumple">
+  <div slot="cumple">
+
+    <BirthdayDay />
 
 
-  <BirthdayDay />
-
-
-</div>
-
+  </div>
 
 
 </BirthdayExperience>
 
 
-<style>
 
+<style>
 
 .hero{
 
@@ -102,7 +97,6 @@ import BirthdayDay from "../components/BirthdayDay.astro";
 }
 
 
-
 .estrellas{
 
   position:absolute;
@@ -121,30 +115,21 @@ import BirthdayDay from "../components/BirthdayDay.astro";
 }
 
 
-
 @keyframes mover{
 
-
 from{
-
 transform:translateY(0);
-
 }
-
 
 to{
-
 transform:translateY(40px);
-
 }
-
 
 }
 
 
 
 .luna{
-
 
 position:absolute;
 
@@ -167,14 +152,11 @@ box-shadow:
 
 0 0 80px #fef3c7;
 
-
 }
 
 
 
-
 .contenido{
-
 
 position:relative;
 
@@ -182,26 +164,21 @@ z-index:2;
 
 text-align:center;
 
-
 }
 
 
 
 .subtitulo{
 
-
 color:#fbcfe8;
 
 font-size:1.2rem;
-
 
 }
 
 
 
-
 h1{
-
 
 font-family:"Great Vibes",cursive;
 
@@ -219,36 +196,25 @@ text-shadow:
 
 animation:brillo 2s infinite alternate;
 
-
 }
-
 
 
 
 @keyframes brillo{
 
-
 from{
-
 filter:brightness(1);
-
 }
-
 
 to{
-
 filter:brightness(1.5);
-
 }
 
-
 }
-
 
 
 
 .mensaje{
-
 
 margin-top:20px;
 
@@ -256,10 +222,9 @@ color:white;
 
 font-size:1.2rem;
 
-
 }
 
-
-
 </style>
+
+
 </Layout>

@@ -4,30 +4,29 @@
 
 
 <script>
-
 const boton = document.getElementById("abrir");
 
+boton?.addEventListener("click", () => {
 
-boton?.addEventListener("click",()=>{
+  const carta = document.querySelector("#carta");
 
-const carta = document.getElementById("carta");
+  if(carta){
 
+    carta.classList.remove("oculta");
 
-if(carta){
+    carta.classList.add("mostrar");
 
-  carta.classList.remove("oculta");
+    carta.scrollIntoView({
+      behavior: "smooth"
+    });
 
-  carta.classList.add("mostrar");
+  } else {
 
+    console.log("No se encontró la carta");
 
-  carta.scrollIntoView({
-    behavior:"smooth"
-  });
-
-}
+  }
 
 });
-
 </script>
 
 
