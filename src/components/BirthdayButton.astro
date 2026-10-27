@@ -4,11 +4,32 @@
 
 
 <script>
+
 const boton = document.getElementById("abrir");
+
 
 boton?.addEventListener("click", () => {
 
+
+  // Activar música de inicio
+  const musica = document.getElementById("musicaInicio") as HTMLAudioElement;
+
+
+  if(musica){
+
+    musica.play().catch(() => {
+
+      console.log("El navegador bloqueó la música");
+
+    });
+
+  }
+
+
+
+  // Abrir carta corta
   const carta = document.querySelector("#carta");
+
 
   if(carta){
 
@@ -16,9 +37,13 @@ boton?.addEventListener("click", () => {
 
     carta.classList.add("mostrar");
 
+
     carta.scrollIntoView({
-      behavior: "smooth"
+
+      behavior:"smooth"
+
     });
+
 
   } else {
 
@@ -26,8 +51,12 @@ boton?.addEventListener("click", () => {
 
   }
 
+
 });
+
+
 </script>
+
 
 
 <style>
@@ -63,6 +92,7 @@ boton?.addEventListener("click", () => {
 }
 
 
+
 .boton-sorpresa:hover{
 
   transform:scale(1.1);
@@ -71,5 +101,6 @@ boton?.addEventListener("click", () => {
   0 0 35px #ec4899;
 
 }
+
 
 </style>
